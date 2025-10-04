@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ISS Museum</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Video background -->
+    <video id="bgvideo" autoplay muted loop playsinline>
+      <source src="/media/iss_background.mp4" type="video/mp4">
+    </video>
+
+    <!-- particle canvas -->
+    <canvas id="particles"></canvas>
+
+    <header class="site-header">
+      <div class="brand">ISS Museum</div>
+      <nav class="main-nav">
+        <a data-page="home" class="nav-link active">Home</a>
+        <a data-page="gallery" class="nav-link">Gallery</a>
+        <a data-page="videos" class="nav-link">Videos</a>
+        <a data-page="news" class="nav-link">News</a>
+        <a data-page="about" class="nav-link">About</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section id="home" class="page active">
+        <div class="home-grid">
+          <div class="panel info">
+            <h1>International Space Station (ISS)</h1>
+            <p id="iss-brief">The ISS is a microgravity laboratory and international cooperation platform orbiting Earth since 1998. Loading latest achievements...</p>
+            <div class="stats">
+              <div class="stat-card">Latitude: <span id="iss-lat">--</span></div>
+              <div class="stat-card">Longitude: <span id="iss-lon">--</span></div>
+              <div class="stat-card">Altitude: <span id="iss-alt">--</span> km</div>
+            </div>
+            <button id="open-constellation" class="btn">Explore Constellations</button>
+          </div>
+          <div class="panel live-map">
+            <div id="iss-map-placeholder">ISS map will render here</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="page">
+        <h2>Gallery</h2>
+        <div id="gallery-grid" class="grid"></div>
+      </section>
+
+      <section id="videos" class="page">
+        <h2>Videos</h2>
+        <div id="videos-grid" class="grid"></div>
+      </section>
+
+      <section id="news" class="page">
+        <h2>News & Research</h2>
+        <div id="news-list"></div>
+        <div id="news-detail" class="hidden"></div>
+      </section>
+
+      <section id="about" class="page">
+        <h2>About the ISS</h2>
+        <div id="about-content">
+          <p>Detailed content is available. (Use the backend or ask me and I'll generate a full About page with modules, agencies, launch dates.)</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a href="https://www.nasa.gov/" target="_blank" rel="noopener">Visit NASA</a>
+      <a href="https://www.youtube.com/user/NASAtelevision" target="_blank" rel="noopener">NASA YouTube</a>
+    </footer>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
